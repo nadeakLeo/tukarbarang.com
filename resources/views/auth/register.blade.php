@@ -64,15 +64,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('telp') ? ' has-error' : '' }}">
-                            <label for="telp" class="col-md-4 control-label">Nomor Telepon</label>
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                            <label for="phone" class="col-md-4 control-label">Nomor Telepon</label>
 
                             <div class="col-md-6">
-                                <input id="telp" type="tel" class="form-control" name="telp" value="{{ old('telp') }}" required autofocus>
+                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
 
-                                @if ($errors->has('telp'))
+                                @if ($errors->has('phone'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
                             </div>
