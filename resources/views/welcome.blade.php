@@ -11,85 +11,226 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/welcome.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-            .full-height {
-                height: 100vh;
-            }
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
+        <div class="flex-center position-ref full-height" id="top">
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    tukartukar.com
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div id="navbar" style="overflow:hidden;">
+                <nav class="navbar navbar-expand-sm bg-faded navbar-dark sticky-top">
+                    <!-- Navbar links -->
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#636b6f;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#636b6f;">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#636b6f;">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#636b6f;">Contact</a>
+                        </li>
+                        @if (Route::has('login'))
+                            @auth
+                            
+                            @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}" style="color:#636b6f;">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}" style="color:#636b6f;">Register</a>
+                            </li>
+                            @endauth
+                        @endif
+                    </ul>
+                </nav>
                 </div>
             </div>
         </div>
+        <br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa<br>
+    <script type="text/javascript">
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function() {myFunction()};
+
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+        }
+    </script>
     </body>
 </html>
