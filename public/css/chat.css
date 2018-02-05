@@ -1,0 +1,38 @@
+#chat-panel {
+	width: 100%;
+}
+
+#msg-box {
+	height: 300px;
+	width: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 16px;
+}
+
+#msg-box:hover {
+	overflow-y: visible;
+}
+
+#control {
+	width: 100%;
+	padding: 16px;
+}
+
+input.msg {
+	width: 87%;
+	margin-right: 1%;
+}
+
+.msg {
+	border-radius: 5px;
+	min-height: 30px;
+	height: auto;
+}
+
+button.msg {
+	width: auto;
+	padding-left: 18px;
+	padding-right: 18px;
+}

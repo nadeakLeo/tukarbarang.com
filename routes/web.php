@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	if (Auth::check()) {
+		return view('home');
+	} else {
+		return view('welcome');
+	}
 });
 
 Route::get('/about', function () {
@@ -26,3 +30,7 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/chat', function() {
+	return view('chat');
+});

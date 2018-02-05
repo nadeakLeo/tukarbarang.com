@@ -53,9 +53,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}" style="color:#636b6f;">Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}" style="color:#636b6f;">Register</a>
-                            </li>
                             @endauth
                         @endif
                     </ul>

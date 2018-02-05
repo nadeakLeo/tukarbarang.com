@@ -22,9 +22,13 @@ class CreateBarangTukarTable extends Migration
                   ->on('users')
                   ->onDelete('cascade');
             $table->string('nama_barang');
-            $table->string('deskripsi')
-                  ->nullable();
+            $table->string('kategori');
+            $table->string('kondisi');
             $table->string('path_gambar');
+            $table->string('harapan_tukar');
+            $table->float('berat')->nullable();
+            $table->float('panjang')->nullable();
+            $table->float('lebar')->nullable();
             $table->timestamps();
         });
     }
