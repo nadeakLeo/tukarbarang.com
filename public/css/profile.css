@@ -1,0 +1,40 @@
+#profile-panel {
+	margin-top : 90px;
+}
+
+#profile-panel img {
+	margin-top: -75px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: solid 1px #7da8c3;
+	border-radius: 5px 5px 0 0;
+	float: left;
+}
+
+#profile-heading {
+	width: auto;
+	margin-top: 35px;
+	font-size: 24px;
+}
+
+table.profile-info {
+	margin-left: 20px;
+}
+table.profile-info td {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+table.profile-info th {
+	float: right;
+}
+
+#profile-info {
+	float: left;
+	border-right: solid 0.5px #7da8c3;
+}
+
+td.content {
+	float: left;
+	padding-left: 10px;
+}
