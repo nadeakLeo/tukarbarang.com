@@ -18,7 +18,7 @@
 }
 
 table.profile-info {
-	margin-left: 20px;
+	margin-left: 10px;
 }
 table.profile-info td {
 	padding-left: 10px;
@@ -31,10 +31,80 @@ table.profile-info th {
 
 #profile-info {
 	float: left;
-	border-right: solid 0.5px #7da8c3;
+	/*background-color: blue;*/
+}
+@media screen and (max-width: 600px){
+    #profile-info{display: none;}
 }
 
 td.content {
-	float: left;
+	/*float: left;*/
+	width: 65%;
 	padding-left: 10px;
+	border-left: solid 0.5px #7da8c3;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:after {
+    content: '\022ee'; /* Unicode character for "plus" sign (+) */
+    font-size: 20px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    margin-top: -6px;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.hide {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+.show {
+    padding: 0 18px;
+    background-color: white;
+    display: block;
+    overflow: hidden;
+    transition: .4s ease-out;
+}
+
+#panel1{
+	height: 350px;
+	overflow: auto;
+	padding-top: 90px;
+	border-left: solid 1px #7da8c3;
+	border-right: solid 1px #7da8c3;
+
+}
+
+#barang {
+	width: 100px;
+	height: 100px;
+}
+
+#barang img {
+	width: 90%;
+	height: 90%;
+	border: dotted 2px #7da8c3;
+	border-radius: 10px;
+}
+#barang img:hover {
+	cursor: pointer;
+	width: 91%;
+	height: 91%;
 }
