@@ -22,3 +22,36 @@
 .card-container {
     padding: 2px 16px;
 }
+
+#add-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    -webkit-transition: all 240ms ease-in-out;
+    -moz-transition: all 240ms ease-in-out;
+    -ms-transition: all 240ms ease-in-out;
+    -o-transition: all 240ms ease-in-out;
+    transition: all 240ms ease-in-out;
+}
+
+.hint {
+    float: right;
+    font-size: 10px;
+    display: none;
+    transition-delay: 1s;
+    margin-top: 35px;
+    margin-right: 5px;
+}
+
+#add-button:hover .hint {
+    display: block;
+}
+
+a.add {
+    font-size: 48px;
+    float: right;
+}
+
+a.add:hover {
+    text-decoration: none;
+}

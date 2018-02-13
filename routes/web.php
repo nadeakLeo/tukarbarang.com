@@ -31,9 +31,7 @@ Route::get('/chat', function() {
 
 Route::get('/profile', 'ProfileController@show');
 
-Route::get('/store', function() {
-	return view('my_store');
-});
+Route::get('/store', 'StoreController@index');
 
 Route::get('/addbarang', function() {
 	return view('add_barang');
