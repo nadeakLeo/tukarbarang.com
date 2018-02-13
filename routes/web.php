@@ -11,13 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-	if (Auth::check()) {
-		return view('home');
-	} else {
-		return view('welcome');
-	}
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/about', function () {
     return view('about');
@@ -36,3 +30,11 @@ Route::get('/chat', function() {
 });
 
 Route::get('/profile', 'ProfileController@show');
+
+Route::get('/store', function() {
+	return view('my_store');
+});
+
+Route::get('/addbarang', function() {
+	return view('add_barang');
+});

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\BarangTukars;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,8 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Auth::check()) {
+            $data['barangs'] = BarangTukars::where('id_user', '!=', Auth::id())->get();
+            return view('home', $data);
+        } else {
+            return view('welcome');
+        }
+        
     }
+
     public function fileUpload(Request $request) {
         $this->validate($request, [
             'item_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

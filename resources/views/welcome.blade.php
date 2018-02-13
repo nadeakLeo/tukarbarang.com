@@ -44,24 +44,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}" style="color:#636b6f;">Login</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('register') }}" class="nav-link" style="color:#636b6f;">Register</a>
+                            </li>
                             @endauth
                         @endif
-                        <li class="nav-item"><a id="openRegister" class="nav-link" style="color:#636b6f;">Register</a>
-                        </li>
                     </ul>
                 </nav>
                 </div>
             </div>
-        </div>
-        <!-- The Modal -->
-        <div id="login-registerModal" class="modal">
-
-          <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Nanti Form Register disini</p>
-            </div>
-
         </div>
     <script type="text/javascript">
         // When the user scrolls the page, execute myFunction 
@@ -80,36 +72,6 @@
             } else {
                 navbar.classList.remove("sticky");
             }
-        }
-
-        // Get the modal
-        var modal = document.getElementById('login-registerModal');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("openRegister");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        window.onload = function() {
-            modal.style.display = "block";   
         }
     </script>
     </body>

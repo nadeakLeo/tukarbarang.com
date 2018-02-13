@@ -15,7 +15,7 @@
                     <table class="all">
                         <tr>
                             <td id="profile-info">
-                                <h4>Profile Info</h4>
+                                <h4>Profile Info <a onclick="showEditor()">&#9998;</a></h4>
                                 <table class="profile-info">
                                     <tr>
                                         <th>Full Name</th>
@@ -71,7 +71,7 @@
         </div>
     </div>
 </div>
-@endsection
+
 <script type="text/javascript">
     function show(panel) {
         var p = document.getElementById(panel);
@@ -81,4 +81,43 @@
             p.className = p.className.replace("show", "");
         }
     }
+
+        // Get the modal
+    var modal = document.getElementById('edit-profile-modal');
+
+    // Get the button that opens the modal
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    function showEditor() {
+        console.log('link clicked');
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
 </script>
+@endsection
+
+<!-- The Modal -->
+<div id="edit-profile-modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
