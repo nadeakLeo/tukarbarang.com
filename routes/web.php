@@ -36,3 +36,5 @@ Route::get('/store', 'StoreController@index');
 Route::get('/addbarang', function() {
 	return view('add_barang');
 });
+
+Route::post('/fileUpload', "HomeController@fileUpload");
