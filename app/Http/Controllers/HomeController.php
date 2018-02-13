@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Faker\Provider\File;
 use Illuminate\Http\Request;
 use App\BarangTukars;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -35,19 +39,35 @@ class HomeController extends Controller
     }
 
     public function fileUpload(Request $request) {
-        $this->validate($request, [
-            'item_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+
+
 
         if ($request->hasFile('item_image')) {
             $image = $request->file('item_image');
             $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/images');
+            $image_name = $image->getClientOriginalName();
+            $destinationPath = public_path('\img\barang_tukar');
             $image->move($destinationPath, $name);
-            $this->save();
+//            $this->save();
 
-            return back()->with('success','Image Upload successfully');
+            $file = new BarangTukars;
+            $file->id_user = Auth::id();
+            $file->nama_barang = strtolower ( $request->input('item_name') );
+            $file->kategori = $request->input('item_category');
+            $file->kondisi = $request->input('item_status');
+            $file->path_gambar = $name;
+            $file->harapan_tukar = strtolower ( $request->input('item_preffer') );
+            Str::lower($file->harapan_tukar);
+            $file->berat = $request->input('item_weight');
+            $file->panjang = $request->input('item_long');
+            $file->lebar = $request->input('item_width');
+            $file->save();
+
+            return view('my_store');
         }
+
+
+
 
     }
 }
