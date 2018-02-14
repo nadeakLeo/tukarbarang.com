@@ -2,7 +2,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @section('content')
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -20,41 +19,51 @@
 
 
                         <label for="item_name"> Nama Barang :</label>
-                        <input type="text" name="item_name"><br/>
+                        <input type="text" name="item_name" class="form-control">
 
-
-                        <label for="item_image"> Gambar Barang:</label>
+                        <br>
+                        <label for="item_image"> Gambar Barang:</label><br>
                         <img src="" id="img" class="img" style="height: 160px; width: 160px; border: 2px solid darkslategray;">
-                        <input type="file" name="item_image" id="item_image" style="display: none"><br/>
-                        <input type="button" name="" value="Browse" id="browse_file" class="btn btn-primary form-control">
+                        <input type="file" name="item_image" id="item_image" style="display: none" class="form-control"><br>
+                        <input type="button" name="" value="Browse" id="browse_file" class="btn form-control" style="width: 10%; margin-top: 10px;"><br><br>
 
-                        <label for="item_status"> Status Barang :</label>
-                        <input type="radio" name="item_status" value="new"> Baru
+                        <label for="item_status"> Status Barang :</label><br>
+                        <input type="radio" name="item_status" value="new"> Baru<br>
                         <input type="radio" name="item_status" value="second"> Bekas<br>
-
+                        <br>
 
                         <label for="item_category"> Kategori Barang :</label>
-                        <select name ="item_category" id="item_category">
+                        <select name ="item_category" id="item_category" class="form-control">
                             <option value="perkakas" selected="selected">Perkakas</option>
                             <option value="elektronik">Elektronik</option>
                             <option value="alat_tulis" >Alat Tulis</option>
                             <option value="3">test3</option>
                         </select><br>
 
-                        <label for="item_weight"> Berat Barang : (gr)</label>
-                        <input type="number" name="item_weight"><br/>
+                        <table width="100%">
+                            <tr>
+                                <td style="padding: 8px 0; padding-right: 5px; width: 50%;">
+                                    <label for="item_weight"> Berat Barang : (gr)</label>
+                                    <input type="number" name="item_weight" class="form-control" ><br>
+                                </td>
+                                <td style="padding: 8px 0; padding-left: 5px; width: 50%;">
+                                    <label for="item_long"> Panjang Barang : (cm)</label>
+                                    <input type="number" name="item_long" class="form-control" ><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px 0; padding-right: 5px; width: 50%;">
+                                    <label for="item_width"> Lebar Barang : (cm)</label>
+                                    <input type="number" name="item_width" class="form-control" >
+                                </td>
+                                <td style="padding: 8px 0; padding-left: 5px; width: 50%;">
+                                    <label for="item_preffer"> Barang Tukar yang Diharapkan :</label>
+                                    <input type="text" name="item_preffer" class="form-control" >
+                                </td>
+                            </tr>
+                        </table>
 
-                        <label for="item_long"> Panjang Barang : (cm)</label>
-                        <input type="number" name="item_long"><br/>
-
-                        <label for="item_width"> Lebar Barang : (cm)</label>
-                        <input type="number" name="item_width"><br/>
-
-                        <label for="item_preffer"> Barang Tukar yang Diharapkan :</label>
-                        <input type="text" name="item_preffer"><br/>
-
-
-                        <input type="submit" name="submit" value="Submit">
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary" style="margin-top: 10px;">
 
 
                         {{csrf_field()}}
