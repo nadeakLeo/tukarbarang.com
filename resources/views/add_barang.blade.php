@@ -40,29 +40,28 @@
                             <option value="3">test3</option>
                         </select><br>
 
-                        <table width="100%">
-                            <tr>
-                                <td style="padding: 8px 0; padding-right: 5px; width: 50%;">
-                                    <label for="item_weight"> Berat Barang : (gr)</label>
-                                    <input type="number" name="item_weight" class="form-control" ><br>
-                                </td>
-                                <td style="padding: 8px 0; padding-left: 5px; width: 50%;">
-                                    <label for="item_long"> Panjang Barang : (cm)</label>
-                                    <input type="number" name="item_long" class="form-control" ><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px 0; padding-right: 5px; width: 50%;">
-                                    <label for="item_width"> Lebar Barang : (cm)</label>
-                                    <input type="number" name="item_width" class="form-control" >
-                                </td>
-                                <td style="padding: 8px 0; padding-left: 5px; width: 50%;">
-                                    <label for="item_preffer"> Barang Tukar yang Diharapkan :</label>
-                                    <input type="text" name="item_preffer" class="form-control" >
-                                </td>
-                            </tr>
-                        </table>
-
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="item_weight"> Berat Barang : (gr)</label>
+                                <input type="number" name="item_weight" class="form-control">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="item_long"> Panjang Barang : (cm)</label>
+                                <input type="number" name="item_long" class="form-control" >
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="item_width"> Lebar Barang : (cm)</label>
+                                <input type="number" name="item_width" class="form-control" >
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="item_preffer"> Barang Tukar yang Diharapkan :</label>
+                                <input type="text" name="item_preffer" class="form-control" >
+                            </div>
+                        </div>
+                        
                         <input type="submit" name="submit" value="Submit" class="btn btn-primary" style="margin-top: 10px;">
 
 
