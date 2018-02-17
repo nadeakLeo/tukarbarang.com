@@ -20,9 +20,8 @@
 
                         <label for="item_name"> Nama Barang :</label>
                         <input type="text" name="item_name" class="form-control">
-
                         <br>
-                        <label for="item_image"> Gambar Barang:</label><br>
+                        <label for="item_image"> Barang:</label><br>
                         <img src="" id="img" class="img" style="height: 160px; width: 160px; border: 2px solid darkslategray;">
                         <input type="file" name="item_image" id="item_image" style="display: none" class="form-control"><br>
                         <input type="button" name="" value="Browse" id="browse_file" class="btn form-control" style="width: 10%; margin-top: 10px;"><br><br>

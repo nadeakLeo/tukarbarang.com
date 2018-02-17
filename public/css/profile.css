@@ -84,9 +84,9 @@ td.content {
 }
 
 #panel1{
-	height: 350px;
 	overflow: auto;
-	padding-top: 90px;
+    padding: 4px 16px;
+    font-size: 12px;
 	border-left: solid 1px #7da8c3;
 	border-right: solid 1px #7da8c3;
 

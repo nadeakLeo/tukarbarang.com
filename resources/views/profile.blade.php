@@ -38,9 +38,7 @@
                             <td class="content">
                                 <button class="accordion" onclick="show('panel1')">My Store</button>
                                 <div id="panel1" class="hide">
-                                  <div id="barang">
-                                      <img src="{{ asset('img/add.png') }}">
-                                  </div>
+                                  <a href="/store" class="primary">See My Store</a>
                                 </div>
 
                                 <button class="accordion" onclick="show('panel2')">Message Box</button>
