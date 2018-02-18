@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.12&appId=981713141994320&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 @section('content')
 
 <div class="container">
@@ -125,9 +132,10 @@
 
                     </form>
                     <div class="form-group">
-                        <div class="btn btn-primary">
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
                             <a href="{{route('facebook.login') }}" class="btn btn-primary">Login with Facebook</a>
                         </div>
+
                         <div class="btn btn-primary">
                             <a href="{{route('google.login')}}" class="btn btn-primary">Login with Google</a>
                         </div>

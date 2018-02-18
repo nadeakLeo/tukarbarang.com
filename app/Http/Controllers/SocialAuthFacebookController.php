@@ -17,7 +17,11 @@ class SocialAuthFacebookController extends Controller
      */
     public function redirect()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->fields([
+            'name', 'email', 'gender', 'birthday','location'
+        ])->scopes([
+            'email', 'user_birthday','user_location'
+        ])->redirect();
     }
     /**
      * Return a callback method from facebook api.
@@ -33,7 +37,9 @@ class SocialAuthFacebookController extends Controller
 //        } catch (\Exception $e) {
 //            return redirect('/');
 //        }
-        $user = Socialite::driver('facebook')->user();
+        $user = Socialite::driver('facebook')->fields([
+            'name', 'email', 'gender', 'birthday','location'
+        ])->user();
 //        dd($user);
 
         $findUser = User::where('email',$user->email)->first();
@@ -45,9 +51,9 @@ class SocialAuthFacebookController extends Controller
             $newUser = new User;
             $newUser->name = $user->name;
             $newUser->email = $user->email;
-            $newUser->gender = "male";
-            $newUser->address = "Bandung";
-            $newUser->phone = "628112124545";
+            $newUser->gender = "-";
+            $newUser->address = "-";
+            $newUser->phone = "-";
             $newUser->birthday = date('Y-m-d');
             $pass = $user->id;
             $newUser->password = bcrypt($pass);

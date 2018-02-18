@@ -10,6 +10,9 @@
 
 namespace App\Http\Controllers;
 
+use App\BarangTukars;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Routing\Controller;
 
@@ -42,15 +45,28 @@ class GoogleController extends Controller
 //        }
 
         $user = Socialite::driver('google')->stateless()->user();
+//        dd($user);
+        $findUser = User::where('email',$user->email)->first();
+        if($findUser){
+            Auth::login($findUser);
+            $data['barangs'] = BarangTukars::where('id_user', '=', Auth::id())->get();
+            return view('my_store', $data);
+        } else {
+            $newUser = new User;
+            $newUser->name = $user->name;
+            $newUser->email = $user->email;
+            $newUser->gender = "-";
+            $newUser->address = "-";
+            $newUser->phone = "-";
+            $newUser->birthday = date('Y-m-d');
+            $pass = $user->id;
+            $newUser->password = bcrypt($pass);
+            $newUser->save();
 
-//        $token = $user->token;
-//        $user->getId();
-//        $user->getNickname();
-//        $user->getName();
-//        $user->getEmail();
-//        $user->getAvatar();
-        dd($user);
-        return $user->name;
-        // $user->token;
+            Auth::login($newUser);
+            $data['barangs'] = BarangTukars::where('id_user', '=', Auth::id())->get();
+            return view('my_store', $data);
+
+        }
     }
 }
