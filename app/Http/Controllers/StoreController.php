@@ -16,4 +16,10 @@ class StoreController extends Controller
             return view('welcome');
         }
     }
+
+    public function viewBarang(Request $req) {
+    	$id_barang = $req->get('id');
+    	$data['barang_detail'] = BarangTukars::find($id_barang);
+    	return view('view_barang', $data);
+    }
 }

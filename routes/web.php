@@ -41,3 +41,5 @@ Route::get('/addbarang', function() {
 });
 
 Route::post('/fileUpload', "HomeController@fileUpload");
+
+Route::get('/barang', 'StoreController@viewBarang');
