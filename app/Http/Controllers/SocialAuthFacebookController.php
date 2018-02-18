@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\BarangTukars;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialAuthFacebookController extends Controller
@@ -23,6 +26,40 @@ class SocialAuthFacebookController extends Controller
      */
     public function callback()
     {
+//        try
+//        {
+//            $user = Socialite::driver('facebook')->user();
+//            dd($user);
+//        } catch (\Exception $e) {
+//            return redirect('/');
+//        }
+        $user = Socialite::driver('facebook')->user();
+//        dd($user);
 
+        $findUser = User::where('email',$user->email)->first();
+        if($findUser){
+            Auth::login($findUser);
+            $data['barangs'] = BarangTukars::where('id_user', '=', Auth::id())->get();
+            return view('my_store', $data);
+        } else {
+            $newUser = new User;
+            $newUser->name = $user->name;
+            $newUser->email = $user->email;
+            $newUser->gender = "male";
+            $newUser->address = "Bandung";
+            $newUser->phone = "628112124545";
+            $newUser->birthday = date('Y-m-d');
+            $pass = $user->id;
+            $newUser->password = bcrypt($pass);
+            $newUser->save();
+
+            Auth::login($newUser);
+            $data['barangs'] = BarangTukars::where('id_user', '=', Auth::id())->get();
+            return view('my_store', $data);
+
+        }
+
+
+//        return $user->gender;
     }
 }

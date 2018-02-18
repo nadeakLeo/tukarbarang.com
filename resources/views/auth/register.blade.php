@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -121,12 +122,16 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
-                            </div>
-                        </div>
+
                     </form>
+                    <div class="form-group">
+                        <div class="btn btn-primary">
+                            <a href="{{route('facebook.login') }}" class="btn btn-primary">Login with Facebook</a>
+                        </div>
+                        <div class="btn btn-primary">
+                            <a href="{{route('google.login')}}" class="btn btn-primary">Login with Google</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

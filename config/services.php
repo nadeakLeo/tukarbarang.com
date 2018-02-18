@@ -22,7 +22,7 @@ return [
     'facebook' => [
         'client_id' => '981713141994320',
         'client_secret' => 'bb3776ae08371a4b898d9ea4d918e5ae',
-        'redirect' => 'http://localhost:8000/callback',
+        'redirect' => 'http://localhost:8000/auth/facebook/callback',
     ],
 
     'ses' => [
@@ -39,6 +39,12 @@ return [
         'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+
+    'google' => [
+        'client_id' => '779142050503-a7uv4g554utg9gdv3v0ek1do4c7o8ku6.apps.googleusercontent.com',
+        'client_secret' => 'QE1owctkqAr7nStktydkr5OY',
+        'redirect' => 'http://localhost:8000/auth/google/callback',
     ],
 
 ];
