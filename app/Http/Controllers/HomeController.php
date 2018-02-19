@@ -39,9 +39,6 @@ class HomeController extends Controller
     }
 
     public function fileUpload(Request $request) {
-
-
-
         if ($request->hasFile('item_image')) {
             $image = $request->file('item_image');
             $name = time().'.'.$image->getClientOriginalExtension();
@@ -65,9 +62,33 @@ class HomeController extends Controller
 
             return view('my_store');
         }
+    }
 
+    public function editfileUpload(Request $request) {
+        $file = BarangTukars::find($request->input('id'));
+        if ($request->hasFile('item_image')) {
+            $image_name = $image->getClientOriginalName();
+            $destinationPath = public_path('\img\barang_tukar');
+            $image->move($destinationPath, $name);
+            $image = $request->file('item_image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $file->path_gambar = $name;
+        } else {
+            $file->path_gambar = $request->input('path');
+        }
+        
+        $file->id = $request->input('id');
+        $file->id_user = Auth::id();
+        $file->nama_barang = strtolower ( $request->input('item_name') );
+        $file->kategori = $request->input('item_category');
+        $file->kondisi = $request->input('item_status');
+        $file->harapan_tukar = strtolower ( $request->input('item_preffer') );
+        Str::lower($file->harapan_tukar);
+        $file->berat = $request->input('item_weight');
+        $file->panjang = $request->input('item_long');
+        $file->lebar = $request->input('item_width');
+        $file->save();
 
-
-
+        return redirect('/mybarang?id='.$file->id);
     }
 }

@@ -24,13 +24,15 @@
 
                     <div id="list-barang" style="margin-top: 30px;">
                         @foreach($barangs as $barang)
-                        <div class="card-barang">
-                            <img src="{{asset('img/barang_tukar/'.$barang->path_gambar)}}" alt="Barang" style="width: 100%">
-                            <div class="card-container">
-                                <h4><strong>{{$barang->nama_barang}}</strong></h4>
-                                <p>Deskripsi Barang</p>
+                        <a href="/mybarang?id={{$barang->id}}" style="color: black;">
+                            <div class="card-barang">
+                                <img src="{{asset('img/barang_tukar/'.$barang->path_gambar)}}" alt="Barang" style="width: 100%">
+                                <div class="card-container">
+                                    <h4><strong>{{$barang->nama_barang}}</strong></h4>
+                                    <p>Deskripsi Barang</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         @endforeach
                     </div>
 

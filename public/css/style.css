@@ -1,0 +1,32 @@
+#edit-icon {
+	position: absolute;
+	right: 27px;
+	font-size: 20px;
+	color: blue;
+}
+
+#edit-text {
+	position: absolute;
+	right: 22px;
+	font-size: 12px;
+	color: blue;
+	margin-top: 25px;
+}
+
+a:hover {
+	cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+	img {
+		margin-top: 35px;
+	}
+
+	#edit-icon {
+		left : 30px;
+	}
+
+	#edit-text {
+		left : 52px;
+		margin-top: 8px;
+	}
+}
