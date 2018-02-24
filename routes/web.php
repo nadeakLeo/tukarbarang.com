@@ -43,3 +43,11 @@ Route::post('/editfileUpload', "HomeController@editfileUpload");
 Route::get('/barang', 'StoreController@viewBarang');
 
 Route::get('/mybarang', 'StoreController@viewMyBarang');
+
+// Route For Admin
+Route::prefix('admin')->group(function () {
+	Route::namespace('admin')->group(function () {
+		Route::get('/','PageController@index');
+		Route::get('login', 'auth\LoginController@index');
+	});
+});
