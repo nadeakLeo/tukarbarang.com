@@ -20,8 +20,11 @@ Route::get('/about', function () {
 
 Auth::routes();
 
-Route::get('/redirect', 'SocialAuthFacebookController@redirect');
-Route::get('/callback', 'SocialAuthFacebookController@callback');
+Route::get('auth/facebook', 'SocialAuthFacebookController@redirect')->name('facebook.login');
+Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');
+
+Route::get('auth/google', 'GoogleController@redirectToProvider')->name('google.login');
+Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

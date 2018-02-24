@@ -9,7 +9,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div id="profile-panel" class="panel panel-default">
                 <img src="{{ asset('img/no-profile.gif') }}" width="120">
-                <div id="profile-heading" class="panel-heading">Nama si Anying</div>
+                <div id="profile-heading" class="panel-heading">Nama </div>
 
                 <div class="panel-body">
                     <table class="all">

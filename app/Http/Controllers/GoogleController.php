@@ -1,47 +1,51 @@
 <?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: ASUS ROG
+ * Date: 2/17/2018
+ * Time: 11:49 AM
+ */
+
+
 
 namespace App\Http\Controllers;
 
 use App\BarangTukars;
-use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Routing\Controller;
 
-class SocialAuthFacebookController extends Controller
+class GoogleController extends Controller
 {
     /**
-     * Create a redirect method to facebook api.
+     * Redirect the user to the GitHub authentication page.
      *
-     * @return void
+     * @return Response
      */
-    public function redirect()
+    public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->fields([
-            'name', 'email', 'gender', 'birthday','location'
-        ])->scopes([
-            'email', 'user_birthday','user_location'
-        ])->redirect();
+        return Socialite::driver('google')->redirect();
     }
+
     /**
-     * Return a callback method from facebook api.
+     * Obtain the user information from GitHub.
      *
-     * @return callback URL from facebook
+     * @return Response
      */
-    public function callback()
+    public function handleProviderCallback()
     {
+
 //        try
 //        {
-//            $user = Socialite::driver('facebook')->user();
+//            $user = Socialite::driver('google')->user();
 //            dd($user);
 //        } catch (\Exception $e) {
 //            return redirect('/');
 //        }
-        $user = Socialite::driver('facebook')->fields([
-            'name', 'email', 'gender', 'birthday','location'
-        ])->user();
-//        dd($user);
 
+        $user = Socialite::driver('google')->stateless()->user();
+//        dd($user);
         $findUser = User::where('email',$user->email)->first();
         if($findUser){
             Auth::login($findUser);
@@ -64,8 +68,5 @@ class SocialAuthFacebookController extends Controller
             return view('my_store', $data);
 
         }
-
-
-//        return $user->gender;
     }
 }

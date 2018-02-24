@@ -59,7 +59,8 @@ class HomeController extends Controller
             $file->panjang = $request->input('item_long');
             $file->lebar = $request->input('item_width');
             $file->save();
-
+            $data['barangs'] = BarangTukars::where('id_user', '=', Auth::id())->get();
+            return view('my_store', $data);
             return view('my_store');
         }
     }
