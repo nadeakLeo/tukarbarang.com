@@ -50,7 +50,11 @@ Route::get('/mybarang', 'StoreController@viewMyBarang');
 // Route For Admin
 Route::prefix('admin')->group(function () {
 	Route::namespace('admin')->group(function () {
-		Route::get('/','PageController@index');
 		Route::get('login', 'auth\LoginController@index');
+		Route::post('signIn', 'auth\LoginController@signin');
+		Route::group(['middleware' => 'auth'], function() {
+			Route::get('/','DashboardController@index');
+			Route::get('/dashboard', 'DashboardController@index');
+		});
 	});
 });

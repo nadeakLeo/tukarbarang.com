@@ -19,14 +19,15 @@
 	<div id="container">
 		<center><span class="title-center">Input Your Credential</span></center>
 		<span class="navbar-brand logo">tukartukar.com</span>
-		<form class="login-form">
+		<form class="login-form" method="POST" action="/admin/signIn">
+			{{csrf_field()}}
 			<div class="form-group">
 				<center><label for="username">Username</label></center>
 				<input type="text" name="username" id="username" class="form-control">
 			</div>
 			<div class="form-group">
 				<center><label for="password">Password</label></center>
-				<input type="text" name="password" id="password" class="form-control">
+				<input type="password" name="password" id="password" class="form-control">
 			</div>
 			<div class="form-group">
 				<center>
@@ -34,6 +35,13 @@
 				</center>
 			</div>
 		</form>
+		 <span class="alert-validation" style="color: red">{{ $errors->first('username') }}</span>
+		 <span class="alert-validation" style="color: red">{{ $errors->first('password') }}</span>
+		 <span class="alert-validation" style="color: red">
+		 	@if(isset($failLogin))
+		 		{{$failLogin}}
+		 	@endif
+		 </span>
 		<center><span class="footer">&copy; 2017. tukartukar.com Administrator Page</span></center>
 	</div>
 
