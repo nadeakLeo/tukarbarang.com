@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Chat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\BarangTukars;
+use Illuminate\Support\Facades\Storage;
 
 class ChatController extends Controller
 {
@@ -12,10 +16,32 @@ class ChatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+     public function index() {
+     	if (Auth::check()) {
+             $data['barangs'] = BarangTukars::where('id_user', '=', Auth::id())->get();
+
+             return view('chat/show_my_item', $data);
+         } else {
+             return view('welcome');
+         }
+     }
+
+     public function viewBarang(Request $req) {
+     	$id_barang = $req->get('id');
+     	$data['barang_detail'] = BarangTukars::find($id_barang);
+     	return view('view_barang', $data);
+     }
+
+     public function viewMyBarang(Request $req) {
+          $id = $req->get('id');
+             $data['barang_detail'] = BarangTukars::where('id_user', $id)->get();
+             $data['id_owner'] = $_GET['id_owner'];
+             $data['id_good'] = $_GET['id_good'];
+
+             return view('chat/show_my_item', $data);
+     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,9 +70,17 @@ class ChatController extends Controller
      * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function show(Chat $chat)
+    public function show()
     {
         //
+        $id = $_GET['id_owner'];
+        $data['id'] = $_GET['id_owner'];
+        $data['id_user'] = $_GET['id'];
+        $data['id_user_good'] = $_GET['id_user_good'];
+        $data['id_good'] = $_GET['id_good'];
+        $partner = User::find($id);
+
+        return view('chat/show')->with('partner', $partner);
     }
 
     /**
@@ -55,9 +89,10 @@ class ChatController extends Controller
      * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Chat $chat)
+    public function edit(Chat $id)
     {
         //
+
     }
 
     /**
@@ -81,5 +116,30 @@ class ChatController extends Controller
     public function destroy(Chat $chat)
     {
         //
+    }
+
+    public function getChat(){
+      $id_owner = $_GET['id_owner'];
+      $data['id_user_good'] = $_GET['id_user_good'];
+
+      $data['id_good'] = $_GET['id_good'];
+        $chats = Chat::where(function ($query) use ($id_owner) {
+          $query->where('user_id', '=', Auth::user()->id)->where('partner_id' , '=' , $id_owner);
+        })->orWhere(function ($query) use ($id_owner) {
+          $query->where('user_id', '=', $id_owner)->where('partner_id' , '=' , Auth::user()->id);
+        })->get();
+
+        return $chats;
+    }
+
+
+    public function sendChat(Request $request) {
+        Chat::create([
+            'user_id' => $request->user_id,
+            'partner_id' => $request->partner_id,
+            'chat' => $request->chat
+        ]);
+
+        return [];
     }
 }

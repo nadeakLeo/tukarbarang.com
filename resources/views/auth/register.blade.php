@@ -136,9 +136,9 @@
                             <a href="{{route('facebook.login') }}" class="btn btn-primary">Login with Facebook</a>
                         </div>
 
-                        <div class="btn btn-primary">
+
                             <a href="{{route('google.login')}}" class="btn btn-primary">Login with Google</a>
-                        </div>
+
                     </div>
                 </div>
             </div>

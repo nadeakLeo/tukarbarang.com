@@ -28,9 +28,12 @@
                     </div>
                     <div class="col-sm-12" style="margin-top: 30px;">
                     	<center>
-                    		<button class="btn btn-primary btn-lg">Chat Owner</button>
+
+                            <a href="/chat?id={{Auth::id()}}&id_owner={{$barang_detail->id_user}}&id_good={{$barang_detail->id}}" class="btn btn-primary">Chat Owner</a>
+
+
                 		</center>
-                    </div>	
+                    </div>
                 </div>
 
             </div>
