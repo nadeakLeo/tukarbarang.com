@@ -19,7 +19,7 @@
 
                     <div id="list-barang">
                         @foreach($barangs as $barang)
-                        <a href="/barang?id={{$barang->id}}" style="color: black;">
+                        <a href="/barang?id={{$barang->id}}&id_owner={{$barang->id_user}}" style="color: black;">
                         <div class="card-barang">
                             <img src="{{asset('img/barang_tukar/'.$barang->path_gambar)}}" alt="Barang" style="width: 100%">
                             <div class="card-container">
