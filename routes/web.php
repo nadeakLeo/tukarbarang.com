@@ -32,6 +32,8 @@ Route::get('/chat','ChatController@viewMyBarang')->middleware('auth')->name('cha
 // Route::get('/chat/{id}','ChatController@show')->middleware('auth')->name('chat.show');
 Route::get('/chat/getChat','ChatController@getChat')->middleware('auth');
 Route::get('/chat/show','ChatController@show')->middleware('auth');
+Route::post('/chat/sendChat','ChatController@sendChat')->middleware('auth');
+Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 
 Route::get('/profile', 'ProfileController@show');
 

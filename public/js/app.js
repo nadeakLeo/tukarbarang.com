@@ -988,9 +988,45 @@ window.Vue = __webpack_require__(37);
  */
 
 Vue.component('chat', __webpack_require__(40));
+Vue.component('chat-composer', __webpack_require__(59));
+// Vue.component('onlineuser', require('./components/OnlineUser.vue'));
 
 var app = new Vue({
-  el: '#app'
+    el: '#app',
+    data: {
+        chats: ''
+        // onlineUsers: ''
+    },
+    created: function created() {
+        var _this = this;
+
+        var userId = $('meta[name="userId"]').attr('content');
+        var partnerId = $('meta[name="partnerId"]').attr('content');
+
+        if (partnerId != undefined) {
+            axios.post('/chat/getChat/' + partnerId).then(function (response) {
+                _this.chats = response.data;
+            });
+
+            Echo.private('Chat.' + partnerId + '.' + userId).listen('BroadcastChat', function (e) {
+
+                _this.chats.push(e.chat);
+            });
+        }
+
+        // if (userId != 'null') {
+        //     Echo.join('Online')
+        //         .here((users) => {
+        //             this.onlineUsers = users;
+        //         })
+        //         .joining((user) => {
+        //             this.onlineUsers.push(user);
+        //         })
+        //         .leaving((user) => {
+        //             this.onlineUsers = this.onlineUsers.filter((u) => {u != user});
+        //         });
+        // }
+    }
 });
 
 /***/ }),
@@ -48569,6 +48605,212 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(60)
+}
+var normalizeComponent = __webpack_require__(46)
+/* script */
+var __vue_script__ = __webpack_require__(62)
+/* template */
+var __vue_template__ = __webpack_require__(63)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-aab418e2"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\ChatComposer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-aab418e2", Component.options)
+  } else {
+    hotAPI.reload("data-v-aab418e2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(61);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(44)("ea294d54", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-aab418e2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatComposer.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-aab418e2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatComposer.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(43)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.panel-block[data-v-aab418e2] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    width: 100%;\n    border: none;\n    padding: 0;\n}\ninput[data-v-aab418e2] {\n    border-radius: 0;\n}\n.auto-width[data-v-aab418e2] {\n    width: auto;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['chats', 'userid', 'partnerid'],
+    data: function data() {
+        return {
+            chat: ''
+        };
+    },
+
+    methods: {
+        sendChat: function sendChat(e) {
+            var _this = this;
+
+            if (this.chat != '') {
+                var data = {
+                    chat: this.chat,
+                    partner_id: this.partnerid,
+                    user_id: this.userid
+                };
+                this.chat = '';
+                axios.post('/chat/sendChat', data).then(function (response) {
+                    _this.chats.push(data);
+                });
+            }
+        }
+    }
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "panel-block field" }, [
+    _c("div", { staticClass: "control" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.chat,
+            expression: "chat"
+          }
+        ],
+        staticClass: "input",
+        attrs: { type: "text" },
+        domProps: { value: _vm.chat },
+        on: {
+          keyup: function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "enter", 13, $event.key)
+            ) {
+              return null
+            }
+            _vm.sendChat($event)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.chat = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "control auto-width" }, [
+      _c("input", {
+        staticClass: "button",
+        attrs: { type: "button", value: "Send" },
+        on: { click: _vm.sendChat }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-aab418e2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

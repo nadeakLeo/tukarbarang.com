@@ -118,15 +118,15 @@ class ChatController extends Controller
         //
     }
 
-    public function getChat(){
+    public function getChat($id){
       $id_owner = $_GET['id_owner'];
       $data['id_user_good'] = $_GET['id_user_good'];
 
       $data['id_good'] = $_GET['id_good'];
-        $chats = Chat::where(function ($query) use ($id_owner) {
-          $query->where('user_id', '=', Auth::user()->id)->where('partner_id' , '=' , $id_owner);
-        })->orWhere(function ($query) use ($id_owner) {
-          $query->where('user_id', '=', $id_owner)->where('partner_id' , '=' , Auth::user()->id);
+        $chats = Chat::where(function ($query) use ($id) {
+          $query->where('user_id', '=', Auth::user()->id)->where('partner_id' , '=' , $id);
+        })->orWhere(function ($query) use ($id) {
+          $query->where('user_id', '=', $id)->where('partner_id' , '=' , Auth::user()->id);
         })->get();
 
         return $chats;

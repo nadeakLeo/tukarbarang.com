@@ -16,7 +16,42 @@ window.Vue = require('vue');
  */
 
 Vue.component('chat', require('./components/Chat.vue'));
+Vue.component('chat-composer', require('./components/ChatComposer.vue'));
+// Vue.component('onlineuser', require('./components/OnlineUser.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        chats: '',
+        // onlineUsers: ''
+    },
+    created() {
+        const userId = $('meta[name="userId"]').attr('content');
+        const partnerId = $('meta[name="partnerId"]').attr('content');
+
+        if (partnerId != undefined) {
+            axios.post('/chat/getChat/' + partnerId).then((response) => {
+                this.chats = response.data;
+            });
+
+            Echo.private('Chat.' + partnerId + '.' + userId)
+                .listen('BroadcastChat', (e) => {
+
+                    this.chats.push(e.chat);
+                });
+        }
+
+        // if (userId != 'null') {
+        //     Echo.join('Online')
+        //         .here((users) => {
+        //             this.onlineUsers = users;
+        //         })
+        //         .joining((user) => {
+        //             this.onlineUsers.push(user);
+        //         })
+        //         .leaving((user) => {
+        //             this.onlineUsers = this.onlineUsers.filter((u) => {u != user});
+        //         });
+        // }
+    }
 });
