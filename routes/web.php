@@ -62,6 +62,7 @@ Route::prefix('/admin')->group(function () {
 			Route::get('/dashboard', 'DashboardController@index');
 			Route::get('/user', 'UserController@index');
 			Route::get('/chatbox', 'ChatBoxController@index');
+      Route::get('/chatitem', 'ChatBoxController@find');
 		});
 	});
 });

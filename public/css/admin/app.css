@@ -37,7 +37,7 @@ a {
 
 a:hover {
 	color: #000000;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .menu-item {
@@ -53,4 +53,37 @@ a:hover {
 	cursor: pointer;
 	background-color: #cfd0d1;
 	text-anchor: none;
+}
+
+#chatbox {
+	height: 70vh;
+	max-width: 500px;
+	background-color: white;
+	padding: 10px;
+	float : left;
+	overflow: auto;
+}
+
+#sent {
+	float: right;
+	background-color: #17d12f;
+	color: white;
+	padding: 8px 16px;
+	max-width: 30%;
+	margin-left: 60%;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+#received {
+	padding: 8px 16px;
+	float: left;
+	margin-right: 60%;
+	background-color: #d6dbd7;
+	max-width: 30%;
+	color: black;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
