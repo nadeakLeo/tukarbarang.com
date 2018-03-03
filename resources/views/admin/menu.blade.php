@@ -7,7 +7,8 @@
 		<ul class="menu">
 			<a href="#"><li class="menu-item">Dashboard</li></a>
 			<a href="/admin/user"></span><li class="menu-item">User</li></a>
-			<a href="#"><li class="menu-item">Chat-Box</li></a>
+			<a href="#"></span><li class="menu-item">Transaction</li></a>
+			<a href="/admin/chatbox"><li class="menu-item">Chat-Box</li></a>
 		</ul>
 	</div>
 @endsection
