@@ -5,6 +5,7 @@
 	}
 </style>
 @section('content')
+	<h3>Daftar Pengguna tukar-tukar.com</h3>
 	<table class="table">
 		<thead class="thead-dark">
 			<tr>
