@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    <form action="fileUpload" method="post" enctype="multipart/form-data">
+                    <form action="/fileUpload" method="post" enctype="multipart/form-data">
 
 
                         <label for="item_name"> Nama Barang :</label>
