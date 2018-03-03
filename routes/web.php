@@ -28,9 +28,7 @@ Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/chat', function() {
-	return view('chat');
-});
+Route::get('/chat','ChatController@index')->middleware('auth')->name('chat.index');
 
 Route::get('/profile', 'ProfileController@show');
 
@@ -46,6 +44,7 @@ Route::post('/editfileUpload', "HomeController@editfileUpload");
 Route::get('/barang', 'StoreController@viewBarang');
 
 Route::get('/mybarang', 'StoreController@viewMyBarang');
+
 
 // Route For Admin
 Route::prefix('admin')->group(function () {

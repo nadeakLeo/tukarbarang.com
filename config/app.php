@@ -171,6 +171,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -215,6 +216,7 @@ return [
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
+        'Pusher' => Pusher\Pusher::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
