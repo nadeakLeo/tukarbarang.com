@@ -11,7 +11,7 @@
                     <div class="contain is-pulled-right">
                         <a href="{{ url('/home') }}" class="is-link"><i class="fa fa-arrow-left"></i> Go Back</a>
                     </div>
-                    <chat v-bind:chats="chats" v-bind:userid="{{ Auth::user()->id }}" v-bind:partner_id="{{ $partner->id }}"></chat>
+                    <chat v-bind:chats="chats" v-bind:userid="{{ Auth::user()->id }}" v-bind:partnerid="{{ $partner->id }}"></chat>
                 </div>
             </div>
         </div>

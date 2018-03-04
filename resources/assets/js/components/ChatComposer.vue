@@ -22,12 +22,14 @@
                 if (this.chat != '') {
                     var data = {
                         chat: this.chat,
-                        partner_id: this.partnerid,
-                        user_id: this.userid
+                        user_id: this.userid,
+                        partner_id: this.partnerid
+
                     }
-                    this.chat = '';
                     axios.post('/chat/sendChat', data).then((response) => {
                         this.chats.push(data)
+                    this.chat = '';
+
                     })
                 }
             }
