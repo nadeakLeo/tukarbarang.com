@@ -52,7 +52,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li><a href="/home">Dashboard</a></li>
-                            <li><a href="#">Message-Box</a></li>
+                            <li><a href="/message-box">Message-Box</a></li>
                             <li><a href="/store">My Store</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">

@@ -27,6 +27,7 @@ Route::get('auth/google', 'GoogleController@redirectToProvider')->name('google.l
 Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/message-box','ChatController@viewMessage')->middleware('auth');
 
 Route::get('/chat','ChatController@viewMyBarang')->middleware('auth')->name('chat.index');
 // Route::get('/chat/{id}','ChatController@show')->middleware('auth')->name('chat.show');

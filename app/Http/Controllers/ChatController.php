@@ -26,6 +26,11 @@ class ChatController extends Controller
          }
      }
 
+     public function viewMessage() {
+       $partners = Auth::user()->chats();
+        return view('chat/index',$partners);
+     }
+
      public function viewBarang(Request $req) {
      	$id_barang = $req->get('id');
      	$data['barang_detail'] = BarangTukars::find($id_barang);
