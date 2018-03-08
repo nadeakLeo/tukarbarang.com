@@ -4,6 +4,7 @@
 	width: 250px;
 	color: #ffffff;
 	float: left;
+	position: fixed;
 }
 
 #copyright {
@@ -57,11 +58,15 @@ a:hover {
 
 #chatbox {
 	height: 70vh;
-	max-width: 500px;
+	width: 100%;
+	min-width: 400px;
 	background-color: white;
 	padding: 10px;
 	float : left;
 	overflow: auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	margin-right: 10%;
 }
 
 #sent {
