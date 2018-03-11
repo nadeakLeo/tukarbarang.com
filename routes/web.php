@@ -57,12 +57,21 @@ Route::prefix('/admin')->group(function () {
 	Route::namespace('admin')->group(function () {
 		Route::get('login', 'auth\LoginController@index');
 		Route::post('signIn', 'auth\LoginController@signin');
+		Route::get('logout', 'auth\LoginController@logout');
 		Route::group(['middleware' => 'auth_admin'], function() {
 			Route::get('/','DashboardController@index');
 			Route::get('/dashboard', 'DashboardController@index');
 			Route::get('/user', 'UserController@index');
 			Route::get('/chatbox', 'ChatBoxController@index');
       		Route::get('/chatitem', 'ChatBoxController@find');
+      		Route::get('/terms', 'TermsController@index');
+      		Route::post('/update-terms', 'TermsController@store');
+      		Route::get('/advertisements', 'AdvertisementController@index');
+      		Route::get('/newAds', 'AdvertisementController@new');
+      		Route::get('/editAds', 'AdvertisementController@edit');
+      		Route::post('/storeads', 'AdvertisementController@store');
+      		Route::get('/deleteads', 'AdvertisementController@delete');
+      		Route::post('/updateads', 'AdvertisementController@update');
 		});
 	});
 });

@@ -37,4 +37,10 @@ class LoginController extends Controller
             }
     	}
     }
+
+    public function logout() {
+        session()->forget('idAdminAktif');
+
+        return redirect('/admin/');
+    }
 }

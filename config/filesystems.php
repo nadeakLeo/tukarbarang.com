@@ -63,6 +63,10 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'ads' => [
+            'driver' => 'local',
+            'root' => public_path() .'\ads',
+        ],
     ],
 
 ];
