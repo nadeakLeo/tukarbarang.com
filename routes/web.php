@@ -51,6 +51,9 @@ Route::get('/barang', 'StoreController@viewBarang');
 
 Route::get('/mybarang', 'StoreController@viewMyBarang');
 
+Route::get('/redirect', function() {
+	return redirect('https://'.$_GET['link']);
+});
 
 // Route For Admin
 Route::prefix('/admin')->group(function () {

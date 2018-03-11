@@ -23,7 +23,7 @@
 			@foreach($ads as $ad)
 			<tr>
 				<td>{{$ad->name}}</td>
-				<td><a href="{{$ad->link}}"> {{$ad->link}} </a></td>
+				<td><a href="https://{{$ad->link}}"> {{$ad->link}} </a></td>
 				<td>{{$ad->description}}</td>
 				<td><a class="btn btn-edit" href="/admin/editAds?id={{$ad->id}}">Edit &#128394;</td>
 				<td><a class="btn btn-delete" href="/admin/deleteads?id={{$ad->id}}">Delete &#128465;</a></td>

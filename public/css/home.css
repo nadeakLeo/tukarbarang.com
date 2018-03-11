@@ -55,3 +55,10 @@ a.add {
 a.add:hover {
     text-decoration: none;
 }
+
+.ads-body {
+    width: 100%;
+    height: 400px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
