@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\BarangTukars;
 use Illuminate\Support\Facades\Storage;
+use App\Terms;
 
 class ChatController extends Controller
 {
@@ -79,8 +80,9 @@ class ChatController extends Controller
         $data['id_user_good'] = $_GET['id_user_good'];
         $data['id_good'] = $_GET['id_good'];
         $partner = User::find($id);
-
-        return view('chat/show')->with('partner', $partner);
+        $terms = Terms::find(1);
+        return view('chat/show')->with('partner', $partner)
+                                ->with('terms', $terms);
     }
 
     /**
