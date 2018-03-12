@@ -1,0 +1,57 @@
+.panel-heading table {
+    width: 100%;
+}
+
+.panel-heading table tr {
+	
+}
+.panel-heading table tr td {
+    width: 50%;
+    text-align: center;
+}
+
+.alt-login {
+	width: 100%;
+}
+
+#line {
+	position: relative;
+	height: 0.5vh;
+	background-color: #99999999;
+	width: 40%;
+	top: 20px;
+}
+
+.line1 {
+	left: 5%;
+}
+
+.line2 {
+	float: right;
+	margin-right: 5%;
+	margin-top: -37px;
+}
+
+.btn-login {
+	background-color: white; 
+	border: solid 1px #999999;
+	width: 40%;
+	color: #999999;
+	margin-bottom: 20px;
+}	
+
+.btn-login i {
+	text-align: left;
+}
+
+.btn-login i.google {
+	color: red;
+}
+
+.btn-login i.fb {
+	color: blue;
+}
+
+.auth-container {
+	background-color: rgba(255,255,255,.6);
+}

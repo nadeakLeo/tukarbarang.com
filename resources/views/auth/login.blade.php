@@ -1,11 +1,18 @@
 @extends('layouts.app')
-
+<style type="text/css">
+    body {
+        background: url("{{asset('img/brand/gmbrbacgrounwebsite.jpg')}}");
+    }
+</style>
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{asset('css/auth.css')}}">
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading" style="border-bottom: solid 1px rgba(153, 153, 153, .6)">
+                    @include('layouts.login-register-header')
+                </div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -62,6 +69,7 @@
                         </div>
                     </form>
                 </div>
+                @include('layouts.login-register-footer')
             </div>
         </div>
     </div>
