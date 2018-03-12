@@ -103,7 +103,6 @@ class ChatController extends Controller
 
         $isAccepted;
         $partner = User::find($id);
-<<<<<<< HEAD
 
 
 
@@ -220,11 +219,10 @@ class ChatController extends Controller
       $partner = User::find($id);
       return view('chat.showPartner')->with('partner',$partner);
 
-=======
+
         $terms = Terms::find(1);
         return view('chat/show')->with('partner', $partner)
                                 ->with('terms', $terms);
->>>>>>> b95f737d5a6023bfcd8f34210555d980c024516d
     }
 
     /**
