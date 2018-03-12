@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
 use App\BarangTukars;
+use App\Advertisements;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -31,6 +32,7 @@ class HomeController extends Controller
     {
         if (Auth::check()) {
             $data['barangs'] = BarangTukars::where('id_user', '!=', Auth::id())->get();
+            $data['ads'] = Advertisements::all();
             return view('home', $data);
         } else {
             return view('welcome');

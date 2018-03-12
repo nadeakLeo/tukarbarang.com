@@ -5,7 +5,20 @@
 @section('content')
 
     <meta name="partnerId" content="{{ $partner->id }}">
+
     <div class="container">
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1" style="font-size: 12px;">Read Terms and Agreement</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse" style="max-height: 300px; overflow: auto;">
+              <div class="panel-body">{{$terms->terms}}</div>
+            </div>
+          </div>
+        </div>
         <div class="column is-8 is-offset-2">
             <div class="panel">
                 <div class="panel-heading">

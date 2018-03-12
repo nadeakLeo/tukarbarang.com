@@ -15,5 +15,9 @@ class DatabaseSeeder extends Seeder
         	'username' => 'admin',
         	'password' => '123'
         ));
+
+        DB::table('terms')->insert(array(
+            'terms' => null,
+        ));
     }
 }

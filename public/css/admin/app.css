@@ -7,6 +7,10 @@
 	position: fixed;
 }
 
+#content {
+	background-color: white;
+}
+
 #copyright {
 	position: absolute;
 	bottom: 5px;
@@ -91,4 +95,99 @@ a:hover {
 	border-radius: 5px;
 	margin-bottom: 5px;
 	margin-top: 5px;
+}
+
+#editor-terms {
+	width: 100%;
+	float: left;
+	padding: 2px 12px;
+	background-color: white;
+}
+
+.btn-submit-terms {
+	float: right;
+	right: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.btn-ads {
+	background-color: #ffaa00;
+	border: solid 1px #ffaa00;
+	float: right;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.btn-save{
+	float: right;
+	padding-left: 18px;
+	padding-right: 18px;
+}
+
+.btn-delete {
+	background-color: #ff0000;
+	border: solid 1px #ff0000;
+}
+
+.btn-edit {
+	background-color: #00ff00;
+	border: solid 1px #00ff00;
+}
+
+table {
+	color: black;
+}
+
+td a {
+	color: black;
+}
+
+thead tr th {
+	text-align: center;
+}
+
+.form-group img {
+	margin-bottom: 12px;
+}
+
+#header {
+	width: 100%;
+	text-align: right;
+	margin-top: -16px;
+}
+
+#header a {
+	color: black;
+}
+
+#navigation {
+	text-align: right;
+	width: 100%;
+	padding: 4px 30px;
+	margin-top: 40px;
+}
+
+
+#navigation-hint {
+	text-align: right;
+	width: 100%;
+	margin-bottom: 15px;
+	padding-right: 24px;
+	margin-top: -10px;
+}
+
+#navigation a {
+	color: blue;
+	font-size: 18px;
+}
+
+#navigation-hint a {
+	color: blue;
+	font-size: 18px;
+}
+
+#navigation-hint a {
+	margin-top: -8px;
+	font-size: 12px;
 }

@@ -58,3 +58,13 @@ a.add {
 a.add:hover {
     text-decoration: none;
 }
+<<<<<<< HEAD
+=======
+
+.ads-body {
+    width: 100%;
+    height: 400px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+>>>>>>> b95f737d5a6023bfcd8f34210555d980c024516d
