@@ -29,10 +29,10 @@ class User extends Authenticatable
     ];
 
     public function partnersOfMine() {
-        return $this->belongsToMany('App\User', 'partners', 'user_id', 'partner_id');
+        return $this->belongsToMany('App\User', 'chats', 'user_id', 'partner_id');
     }
     public function partnerOf() {
-        return $this->belongsToMany('App\User', 'partners', 'partner_id', 'user_id');
+        return $this->belongsToMany('App\User', 'chats', 'partner_id', 'user_id');
     }
     public function partners() {
         return $this->partnersOfMine->merge($this->partnerOf);

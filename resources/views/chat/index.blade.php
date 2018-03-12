@@ -8,7 +8,7 @@
                     List of all partners
                 </div>
                 @forelse ($partners as $partner)
-                    <a href="{{ route('chat.show', $partner->id) }}" class="panel-block" style="justify-content: space-between;">
+                    <a href="/chat/show?id_owner={{$partner->id}}?id={{Auth::user()->id}}  "class="panel-block"; style="justify-content: space-between;">
                         <div>{{ $partner->name }}</div>
                         <!-- <onlineuser v-bind:partner="{{ $partner }}" v-bind:onlineusers="onlineUsers"></onlineuser> -->
                     </a>

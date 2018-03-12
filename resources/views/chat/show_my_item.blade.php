@@ -1,14 +1,17 @@
 @extends('layouts.app')
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 @section('content')
 @push('styles')
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/home.css')}}">
 @endpush
 <div class="container">
+
     <div class="row">
+
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-
+                <p><b>Pilih Barang Yang Ingin Ditukarkan</b></p>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -20,6 +23,7 @@
 
 
                       @foreach($barang_detail as $barang)
+
                       <a href="/chat/show?id={{$barang->id_user}}&id_user_good={{$barang->id}}&id_owner={{$id_owner}}&id_good={{$id_good}}" style="color: black;">
                       <div class="row">
                       <div class="col-sm-4">
@@ -33,7 +37,8 @@
                     		Lebar : {{$barang->lebar}}<br>
                     	</div>
 
-                      </div>
+                      
+                    </div>
                     </a>
                       @endforeach
 
