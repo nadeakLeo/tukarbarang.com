@@ -35,4 +35,8 @@ class StoreController extends Controller
             return view('view_my_barang', $data);
         }
     }
+
+    public function welcome() {
+        return view('welcome');
+    }
 }

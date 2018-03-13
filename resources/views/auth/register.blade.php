@@ -11,6 +11,7 @@
 <style type="text/css">
     body {
         background: url("{{asset('img/brand/gmbrbacgrounwebsite.jpg')}}");
+        background-attachment: fixed;
     }
 </style>
 

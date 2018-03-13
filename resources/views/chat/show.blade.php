@@ -13,11 +13,11 @@
               </h4>
             </div>
             <div id="collapse1" class="panel-collapse collapse" style="max-height: 300px; overflow: auto;">
-              <div class="panel-body">{{$terms->terms}}</div>
+              <div class="panel-body">@if($terms != null) {{$terms->terms}} @endif</div>
             </div>
           </div>
         </div>
-        <div class="column is-8 is-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel">
                 <div class="panel-heading">
                     {{ $partner->name }}

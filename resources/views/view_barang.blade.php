@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">{{$barang_detail->nama_barang}}</div>
 
@@ -29,7 +29,7 @@
                     <div class="col-sm-12" style="margin-top: 30px;">
                     	<center>
 
-                            <a href="/chat?id={{Auth::id()}}&id_owner={{$barang_detail->id_user}}&id_good={{$barang_detail->id}}" class="btn btn-primary">Chat Owner</a>
+                            <a href="/chat?id={{Auth::id()}}&id_owner={{$barang_detail->id_user}}&id_good={{$barang_detail->id}}" class="btn btn-primary"><i class="icon-bubble"></i>  Chat Owner</a>
 
 
                 		</center>

@@ -11,17 +11,21 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>tukartukar.com</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/icomoon/styles.css')}}">
     <style type="text/css">
+        body {
+            background: url("{{asset('img/brand/gmbrbacgrounwebsite.jpg')}}");
+            background-attachment: fixed;
+        }
     </style>
 </head>
-<body>
+<body style="padding-top: 90px;">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header" style="height: 70px;">
 
@@ -39,11 +43,12 @@
                     </a>
                 </div>
 
-                <div class="collapse navbar-collapse " id="app-navbar-collapse" style="margin-top: 10px;">
+                <div class="collapse navbar-collapse" id="app-navbar-collapse" style="margin-top: 10px;">
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+                            <li><a href="/welcome">Home</a><li>
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>

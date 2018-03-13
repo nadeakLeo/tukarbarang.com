@@ -20,6 +20,8 @@ Route::get('/about', function () {
 
 Auth::routes();
 
+Route::get('/welcome', 'StoreController@welcome');
+
 Route::get('auth/facebook', 'SocialAuthFacebookController@redirect')->name('facebook.login');
 Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');
 
