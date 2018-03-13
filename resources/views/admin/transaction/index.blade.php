@@ -1,11 +1,16 @@
 @extends("admin.menu")
-
+<style>
+	tbody td {
+		text-align: center;
+	}
+</style>
 @section('content')
-	<div id="panel panel-default">
+	<div class="panel panel-default">
+		<div class="panel-body">
 		<table class="table table-responsive">
 			<thead>
 				<tr>
-					<th>Transaction ID</th>
+					<th>No</th>
 					<th>User</th>
 					<th colspan="2"> User Goods</th>
 					<th>Partner</th>
@@ -23,11 +28,12 @@
 					<td>{{$transaction->user_2_name}}</td>
 					<td>{{$transaction->id_barang_2}}</td>
 					<td>{{$transaction->barang_2}}</td>
-					<td>status</td>
+					<td>{{$transaction->status}}</td>
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
+		</div>
 	</div>
 @endsection
 

@@ -4,6 +4,7 @@
 	<title>tukartukar.com | Administrator</title>
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/admin/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/icomoon/styles.css')}}">
 	
 <body>
 	<div id="sidebar">
