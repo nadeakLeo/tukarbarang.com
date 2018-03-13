@@ -68,6 +68,7 @@
                                 </a>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
                 @include('layouts.login-register-footer')

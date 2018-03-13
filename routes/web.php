@@ -29,11 +29,12 @@ Route::get('auth/google', 'GoogleController@redirectToProvider')->name('google.l
 Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/message-box','ChatController@viewMessage')->middleware('auth');
 
 Route::get('/chat','ChatController@viewMyBarang')->middleware('auth')->name('chat.index');
-// Route::get('/chat/{id}','ChatController@show')->middleware('auth')->name('chat.show');
+//Route::get('/chat/{id}','ChatController@showPartner')->middleware('auth')->name('chat.showPartner');
 // Route::get('/chat/getChat','ChatController@getChat')->middleware('auth');
-Route::get('/chat/show','ChatController@show')->middleware('auth');
+Route::get('/chat/show','ChatController@show')->middleware('auth')->name('chat.show');
 Route::post('/chat/sendChat','ChatController@sendChat')->middleware('auth');
 Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 
@@ -52,6 +53,8 @@ Route::post('/editfileUpload', "HomeController@editfileUpload");
 Route::get('/barang', 'StoreController@viewBarang');
 
 Route::get('/mybarang', 'StoreController@viewMyBarang');
+
+Route::get('/addTransaction', "TransaksiController@sendTransaction");
 
 Route::get('/redirect', function() {
 	return redirect('https://'.$_GET['link']);

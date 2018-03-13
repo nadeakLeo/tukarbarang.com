@@ -57,7 +57,10 @@
                             <img src="{{asset('img/barang_tukar/'.$barang->path_gambar)}}" alt="Barang" style="width: 100%">
                             <div class="card-container">
                                 <h4><strong>{{$barang->nama_barang}}</strong></h4>
-                                <p>Deskripsi Barang</p>
+                                Kategori : {{$barang->kategori}}<br>
+                                Kondisi  : {{$barang->kondisi}}<br>
+                                Kategori : {{$barang->kategori}}<br>
+                                
                             </div>
                         </div>
                         </a>
