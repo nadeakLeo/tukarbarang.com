@@ -98,7 +98,7 @@ class ChatController extends Controller
      */
     public function show()
     {
-        //
+        $terms = Terms::find(1);
         $id = $_GET['id_owner'];
 
         $isAccepted;
