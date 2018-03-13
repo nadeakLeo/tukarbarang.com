@@ -80,6 +80,7 @@ Route::prefix('/admin')->group(function () {
       		Route::post('/storeads', 'AdvertisementController@store');
       		Route::get('/deleteads', 'AdvertisementController@delete');
       		Route::post('/updateads', 'AdvertisementController@update');
+      		Route::get('/transaction', 'TransactionController@index');
 		});
 	});
 });

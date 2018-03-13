@@ -7,7 +7,7 @@
 		<ul class="menu">
 			<a href="/admin/dashboard"><li class="menu-item">Dashboard</li></a>
 			<a href="/admin/user"><li class="menu-item">User</li></a>
-			<a href="#"><li class="menu-item">Transaction</li></a>
+			<a href="/admin/transaction"><li class="menu-item">Transaction</li></a>
 			<a href="/admin/chatbox"><li class="menu-item">Chat-Box</li></a>
 			<a href="/admin/terms"><li class="menu-item">Terms and Agreement</li></a>
 			<a href="/admin/advertisements"><li class="menu-item">Advertisements</li></a>
