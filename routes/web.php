@@ -20,6 +20,8 @@ Route::get('/about', function () {
 
 Auth::routes();
 
+Route::get('/welcome', 'StoreController@welcome');
+
 Route::get('auth/facebook', 'SocialAuthFacebookController@redirect')->name('facebook.login');
 Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');
 
@@ -78,6 +80,7 @@ Route::prefix('/admin')->group(function () {
       		Route::post('/storeads', 'AdvertisementController@store');
       		Route::get('/deleteads', 'AdvertisementController@delete');
       		Route::post('/updateads', 'AdvertisementController@update');
+      		Route::get('/transaction', 'TransactionController@index');
 		});
 	});
 });

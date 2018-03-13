@@ -35,10 +35,11 @@ class HomeController extends Controller
             $data['ads'] = Advertisements::all();
             return view('home', $data);
         } else {
-            return view('welcome');
+            return redirect('/login');
         }
         
     }
+
 
     public function fileUpload(Request $request) {
         if ($request->hasFile('item_image')) {

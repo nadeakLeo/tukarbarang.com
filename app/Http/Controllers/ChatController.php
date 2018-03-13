@@ -104,8 +104,7 @@ class ChatController extends Controller
         $isAccepted;
         $partner = User::find($id);
 
-        
-
+        $terms = Terms::find(1);
 
 
 
@@ -166,7 +165,7 @@ class ChatController extends Controller
 
           return view('chat/show')->with('partner', $partner)->with('flag', $flag)->
                                     with('id_user_good', $id_user_good)->
-                                    with('id_good', $id_good)->with('isAccepted',$isAccepted);
+                                    with('id_good', $id_good)->with('isAccepted',$isAccepted)->with('terms', $terms);
         } else {
           $getTransaksi = Transaksi::where("user_2",Auth::user()->id)->
                                       where("user_1",$id)->first();
@@ -187,7 +186,7 @@ class ChatController extends Controller
            $flag = true;
            return view('chat/show')->with('partner', $partner)->with('flag', $flag)->
                                      with('id_user_good', $id_user_good)->
-                                     with('id_good', $id_good)->with('isAccepted',$isAccepted);
+                                     with('id_good', $id_good)->with('isAccepted',$isAccepted)->with('terms', $terms);
          } elseif (  $getTransaksi2 != null) {
            $id_user_good = $getTransaksi2->id_barang_1;
            $id_good = $getTransaksi2->id_barang_2;
@@ -203,9 +202,9 @@ class ChatController extends Controller
            $flag = true;
            return view('chat/show')->with('partner', $partner)->with('flag', $flag)->
                                      with('id_user_good', $id_user_good)->
-                                     with('id_good', $id_good)->with('isAccepted',$isAccepted);
+                                     with('id_good', $id_good)->with('isAccepted',$isAccepted)->with('terms', $terms);
          }else {
-           return view('chat/show')->with('partner', $partner)->with('flag', $flag);
+           return view('chat/show')->with('partner', $partner)->with('flag', $flag)->with('terms', $terms);
          }
 
 
@@ -220,7 +219,6 @@ class ChatController extends Controller
 
       $partner = User::find($id);
       return view('chat.showPartner')->with('partner',$partner);
-
 
         $terms = Terms::find(1);
         return view('chat/show')->with('partner', $partner)

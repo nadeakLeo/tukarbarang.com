@@ -141,10 +141,9 @@
                         </div>
 
                     </form>
-
+                  
                 @include('layouts.login-register-footer')
-
-
+                    
                 </div>
             </div>
         </div>
