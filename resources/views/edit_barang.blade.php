@@ -4,8 +4,8 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-Success">
                 <div class="panel-heading">My Store</div>
 
                 <div class="panel-body">
@@ -27,7 +27,7 @@
                         <input type="button" name="" value="Browse" id="browse_file" class="btn form-control" style="width: 10%; margin-top: 10px;"><br><br>
 
                         <label for="item_status"> Status Barang :</label><br>
-                        <input type="radio" name="item_status" value="new" 
+                        <input type="radio" name="item_status" value="new"
                             @if($barang_detail->kondisi == 'new')
                                 checked
                             @endif> Baru<br>

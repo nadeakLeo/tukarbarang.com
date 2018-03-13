@@ -1,11 +1,15 @@
+import { Button } from 'bootstrap-vue/es/components';
+
+Vue.use(Button);
+
 <template lang="html">
     <div class="panel-block field">
         <div class="control">
-            <input type="text" class="input" v-on:keyup.enter="sendChat" v-model="chat">
+            <input type="text" class="input" v-on:keyup.enter="sendChat" style="width: 50%;height: 35px;font-size:120%;" v-model="chat">
+            <input type="button" class="btn " style="background-color: #008CBA; color: white;" value="Send" v-on:click="sendChat">
         </div>
-        <div class="control auto-width">
-            <input type="button" class="button" value="Send" v-on:click="sendChat">
-        </div>
+
+
     </div>
 </template>
 

@@ -27,6 +27,7 @@
     .no-message {
         height: 200px;
         display: flex;
+        justify-content: center;
         align-items: center;
     }
 </style>
@@ -44,7 +45,8 @@
             </div>
         </div>
         <div v-else class="no-message">
-            There are no messages
+            
+            <h2>There are no messages</h2>
         </div>
         <chat-composer v-bind:userid="userid" v-bind:chats="chats" v-bind:partnerid="partnerid"></chat-composer>
     </div>

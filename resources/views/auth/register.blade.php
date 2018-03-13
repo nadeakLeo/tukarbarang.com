@@ -11,7 +11,6 @@
 <style type="text/css">
     body {
         background: url("{{asset('img/brand/gmbrbacgrounwebsite.jpg')}}");
-        background-attachment: fixed;
     }
 </style>
 
@@ -142,10 +141,9 @@
                         </div>
 
                     </form>
-
+                  
                 @include('layouts.login-register-footer')
-
-
+                    
                 </div>
             </div>
         </div>
