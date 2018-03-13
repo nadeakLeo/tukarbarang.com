@@ -98,7 +98,7 @@ class ChatController extends Controller
      */
     public function show()
     {
-        //
+        $terms = Terms::find(1);
         $id = $_GET['id_owner'];
 
         $isAccepted;
@@ -164,7 +164,8 @@ class ChatController extends Controller
 
           return view('chat/show')->with('partner', $partner)->with('flag', $flag)->
                                     with('id_user_good', $id_user_good)->
-                                    with('id_good', $id_good)->with('isAccepted',$isAccepted);
+                                    with('id_good', $id_good)->with('isAccepted',$isAccepted)->
+                                    with('terms', $terms);
         } else {
           $getTransaksi = Transaksi::where("user_2",Auth::user()->id)->
                                       where("user_1",$id)->first();
@@ -201,9 +202,11 @@ class ChatController extends Controller
            $flag = true;
            return view('chat/show')->with('partner', $partner)->with('flag', $flag)->
                                      with('id_user_good', $id_user_good)->
-                                     with('id_good', $id_good)->with('isAccepted',$isAccepted);
+                                     with('id_good', $id_good)->with('isAccepted',$isAccepted)->
+                                     with('terms', $terms);
          }else {
-           return view('chat/show')->with('partner', $partner)->with('flag', $flag);
+           return view('chat/show')->with('partner', $partner)->with('flag', $flag)->
+                                     with('terms', $terms);
          }
 
 
