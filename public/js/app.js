@@ -48558,23 +48558,27 @@ var render = function() {
             "div",
             { staticClass: "chat" },
             _vm._l(_vm.chats, function(chat) {
-              return _c("div", { staticStyle: { overflow: "auto" } }, [
-                chat.user_id == _vm.userid
-                  ? _c("div", { staticClass: "chat-right" }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(chat.chat) +
-                          "\n            "
-                      )
-                    ])
-                  : _c("div", { staticClass: "chat-left" }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(chat.chat) +
-                          "\n            "
-                      )
-                    ])
-              ])
+              return _c(
+                "div",
+                { staticStyle: { overflow: "auto", height: "100 px" } },
+                [
+                  chat.user_id == _vm.userid
+                    ? _c("div", { staticClass: "chat-right" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(chat.chat) +
+                            "\n            "
+                        )
+                      ])
+                    : _c("div", { staticClass: "chat-left" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(chat.chat) +
+                            "\n            "
+                        )
+                      ])
+                ]
+              )
             })
           )
         : _c("div", { staticClass: "no-message" }, [

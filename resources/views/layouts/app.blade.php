@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('img/brand/logoku.jpg')}}" />
 <head>
     @stack('styles')
     @stack('scripts')

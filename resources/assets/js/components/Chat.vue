@@ -35,7 +35,7 @@
 <template>
     <div class="panel-block">
         <div class="chat" v-if="chats.length != 0">
-            <div v-for="chat in chats" style="overflow: auto;">
+            <div v-for="chat in chats" style="overflow: auto; height: 100 px;">
                 <div class="chat-right" v-if="chat.user_id == userid">
                     {{ chat.chat }}
                 </div>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div v-else class="no-message">
-            
+
             <h2>There are no messages</h2>
         </div>
         <chat-composer v-bind:userid="userid" v-bind:chats="chats" v-bind:partnerid="partnerid"></chat-composer>
