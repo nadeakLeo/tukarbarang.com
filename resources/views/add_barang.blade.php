@@ -4,8 +4,8 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
                 <div class="panel-heading">My Store</div>
 
                 <div class="panel-body">
@@ -60,7 +60,7 @@
                                 <input type="text" name="item_preffer" class="form-control" >
                             </div>
                         </div>
-                        
+
                         <input type="submit" name="submit" value="Submit" class="btn btn-primary" style="margin-top: 10px;">
 
 

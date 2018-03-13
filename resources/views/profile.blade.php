@@ -6,8 +6,8 @@
 @endpush
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div id="profile-panel" class="panel panel-default">
+        <div class="col-md-10 col-md-offset-1">
+            <div id="profile-panel" class="panel panel-primary">
                 <img src="{{ asset('img/no-profile.gif') }}" width="120">
                 <div id="profile-heading" class="panel-heading">Nama </div>
 
@@ -27,7 +27,7 @@
                                     </tr>
                                     <tr>
                                         <th>Phone Number</th>
-                                        <td>{{ $user->phone }}</td>    
+                                        <td>{{ $user->phone }}</td>
                                     </tr>
                                     <tr>
                                         <th>Address</th>
@@ -53,7 +53,7 @@
                             </td>
                     </table>
                 </div>
-                
+
                 <div id="profile-heading" class="panel-heading"></div>
 
                 <div class="panel-body">
@@ -64,7 +64,7 @@
                     @endif
 
                     Mee
-                </div>                
+                </div>
             </div>
         </div>
     </div>

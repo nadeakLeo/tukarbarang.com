@@ -6,8 +6,8 @@
 @endpush
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
                 <div class="panel-heading">{{$barang_detail->nama_barang}}</div>
 
                 <div class="panel-body">
@@ -20,7 +20,7 @@
                     <div id="row">
                         <a id="edit-icon" href="/mybarang?id={{$barang_detail->id}}&edit=true">&#9998;</a>
                         <a id="edit-text" href="/mybarang?id={{$barang_detail->id}}&edit=true">Edit</a>
-                        
+
                     	<div class="col-sm-4">
                     		<img src="{{asset('img/barang_tukar/'.$barang_detail->path_gambar)}}" style="width: 100%;"></div>
                     	<div class="col-sm-8" style="padding: 4px 12px;">

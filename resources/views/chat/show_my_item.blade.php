@@ -9,9 +9,14 @@
 
     <div class="row">
 
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <p><b>Pilih Barang Yang Ingin Ditukarkan</b></p>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                  <p><b>Pilih Barang Yang Ingin Ditukarkan</b></p>
+                </h3>
+              </div>
+
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -29,7 +34,7 @@
                       <div class="col-sm-4">
                     		<img src="{{asset('img/barang_tukar/'.$barang->path_gambar)}}" style="width: 100%;" ></div>
                     	<div class="col-sm-8" style="padding: 4px 12px;">
-
+                        Nama Barang : {{$barang->nama_barang}}<br>
                     		Kategori : {{$barang->kategori}}<br>
                     		Harapan Tukar : {{$barang->harapan_tukar}}<br>
                     		Berat : {{$barang->berat}}<br>
@@ -37,7 +42,7 @@
                     		Lebar : {{$barang->lebar}}<br>
                     	</div>
 
-                      
+
                     </div>
                     </a>
                       @endforeach
